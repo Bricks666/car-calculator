@@ -1,0 +1,26 @@
+.loading {
+	display: inline-block;
+
+	width: 40px;
+	height: 40px;
+
+	border-radius: 50%;
+	border: 2px solid var(--global-white);
+	border-bottom: none;
+
+	transform-origin: center;
+
+	animation-name: spin;
+	animation-timing-function: linear;
+	animation-duration: 600ms;
+	animation-iteration-count: infinite;
+}
+
+@keyframes spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}

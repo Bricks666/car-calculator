@@ -1,0 +1,55 @@
+.container {
+	position: relative;
+
+	line-height: 1.2em;
+	font-weight: 900;
+	font-size: 30px;
+	font-family: 'Nekst', sans-serif;
+}
+
+.input {
+	width: 100%;
+	height: max-content;
+
+	padding: 16px 24px;
+
+	background-color: var(--global-grey-light);
+
+	border-radius: 16px;
+
+	font-size: inherit;
+	font-weight: inherit;
+	line-height: inherit;
+	font-family: inherit;
+	color: inherit;
+}
+
+.input::placeholder {
+	font-size: inherit;
+	font-weight: inherit;
+	line-height: inherit;
+	color: inherit;
+	font-family: inherit;
+}
+
+.inputHasPostfix {
+	padding-right: calc(70px + 24px + 0.5em);
+}
+
+.postfix {
+	position: absolute;
+	right: 24px;
+	top: 50%;
+
+	max-width: 70px;
+
+	overflow: hidden;
+
+	transform: translateY(-50%);
+}
+
+@media (max-width: 768px) {
+	.container {
+		font-size: 22px;
+	}
+}

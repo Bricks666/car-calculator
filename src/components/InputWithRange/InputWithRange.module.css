@@ -1,0 +1,20 @@
+.inputWithRange {
+	position: relative;
+}
+
+.range {
+	position: absolute;
+	bottom: 0;
+
+	width: calc(100% - 24px * 2);
+
+	margin-left: 24px;
+
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(50%);
+}
+
+.inputWithRange:focus-within .range,
+.inputWithRange:hover .range {
+	--range-track-height: 1px;
+}

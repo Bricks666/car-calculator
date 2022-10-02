@@ -1,0 +1,27 @@
+.container {
+	--container-breakpoint-width: 1440px;
+	--container-side-margin: 48px;
+	max-width: calc(var(--container-breakpoint-width) - var(--container-side-margin) * 2);
+
+	margin: 0 auto;
+}
+
+@media (max-width: 1440px) {
+	.container {
+		--container-breakpoint-width: 1024px;
+	}
+}
+
+@media (max-width: 1024px) {
+	.container {
+		--container-side-margin: 36px;
+		--container-breakpoint-width: 768px;
+	}
+}
+
+@media (max-width: 768px) {
+	.container {
+		--container-side-margin: 20px;
+		--container-breakpoint-width: 320px;
+	}
+}

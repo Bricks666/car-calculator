@@ -1,0 +1,10 @@
+.field {
+	display: grid;
+	row-gap: 24px;
+}
+
+@media (max-width: 768px) {
+	.field {
+		row-gap: 8px;
+	}
+}
