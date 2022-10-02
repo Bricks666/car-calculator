@@ -2,9 +2,9 @@ import * as React from 'react';
 import cn from 'classnames';
 import { CommonProps } from '@/interfaces/common';
 import { InputWithRange, InputWithRangeProps } from '../InputWithRange';
+import { Label } from '../Label';
 
 import styles from './Field.module.css';
-import { Label } from '../Label';
 
 export interface FieldProps extends CommonProps, InputWithRangeProps {
 	readonly label?: string;

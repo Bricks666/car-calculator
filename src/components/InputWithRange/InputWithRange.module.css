@@ -2,6 +2,11 @@
 	position: relative;
 }
 
+.inputWithRange:focus-within .input {
+	--input-background-color: transparent;
+	--input-border-color: var(--global-grey-light);
+}
+
 .range {
 	position: absolute;
 	bottom: 0;
@@ -11,7 +16,7 @@
 	margin-left: 24px;
 
 	-webkit-transform: translateY(-50%);
-	-moz-transform: translateY(50%);
+	-moz-transform: translateY(calc(50% - 1px));
 }
 
 .inputWithRange:focus-within .range,

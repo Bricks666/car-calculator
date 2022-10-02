@@ -19,6 +19,8 @@
 	border-radius: 40px;
 
 	transition: background-color ease-in-out 200ms;
+
+	cursor: pointer;
 }
 
 .button:hover,
@@ -31,6 +33,6 @@
 }
 
 .loading {
-	width: 1.4em;
-	height: 1.4em;
+	width: 1em;
+	height: 1em;
 }

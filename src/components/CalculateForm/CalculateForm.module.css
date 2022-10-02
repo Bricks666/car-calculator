@@ -1,0 +1,27 @@
+.calculateForm {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	column-gap: 30px;
+	row-gap: 50px;
+}
+
+.result {
+	display: grid;
+	row-gap: 8px;
+}
+
+.resultText {
+	font-family: 'Nekst', sans-serif;
+	font-weight: 700;
+	font-size: 54px;
+	line-height: 1.2em;
+}
+
+.button {
+	align-self: center;
+
+	font-family: 'Nekst', sans-serif;
+	font-weight: 700;
+	font-size: 30px;
+	line-height: 1.2em;
+}

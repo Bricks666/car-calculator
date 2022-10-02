@@ -1,4 +1,7 @@
 .container {
+	--input-background-color: var(--global-grey-light);
+	--input-border-color: transparent;
+
 	position: relative;
 
 	line-height: 1.2em;
@@ -13,15 +16,18 @@
 
 	padding: 16px 24px;
 
-	background-color: var(--global-grey-light);
+	background-color: var(--input-background-color);
 
 	border-radius: 16px;
+	border: 2px solid var(--input-border-color);
 
 	font-size: inherit;
 	font-weight: inherit;
 	line-height: inherit;
 	font-family: inherit;
 	color: inherit;
+
+	transition: all 200ms ease-in-out;
 }
 
 .input::placeholder {

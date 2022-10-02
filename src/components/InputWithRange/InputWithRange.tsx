@@ -18,7 +18,7 @@ export const InputWithRange: React.FC<InputWithRangeProps> = React.memo(function
 	const { className, type, ...rest } = props;
 	return (
 		<div className={cn(styles.inputWithRange, className)}>
-			<Input {...rest} type={type} />
+			<Input className={styles.input} {...rest} type={type} />
 			<Range className={styles.range} {...rest} />
 		</div>
 	);

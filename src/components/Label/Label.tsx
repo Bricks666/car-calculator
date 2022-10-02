@@ -5,9 +5,7 @@ import { CommonProps } from '@/interfaces/common';
 
 import styles from './Label.module.css';
 
-export interface LabelProps extends CommonProps, React.LabelHTMLAttributes<HTMLLabelElement> {
-	readonly htmlFor: string;
-}
+export interface LabelProps extends CommonProps, React.LabelHTMLAttributes<HTMLLabelElement> {}
 
 export const Label: React.FC<LabelProps> = (props) => {
 	const { className, children, ...rest } = props;
