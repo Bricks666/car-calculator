@@ -62,29 +62,32 @@ export const CalculateForm: React.FC<CalculateFormProps> = React.memo(function C
 	return (
 		<form className={cn(styles.calculateForm, className)} onSubmit={onSubmit}>
 			<Field
-				postfix='₽'
+				className={styles.field}
+				value={price.value}
+				onChange={price.onChange}
 				min={1_000_000}
 				max={6_000_000}
 				step={10_000}
-				onChange={price.onChange}
-				value={price.value}
+				postfix='₽'
 				label='Стоимость автомобиля'
 			/>
 			<Field
+				className={styles.field}
 				value={initialPay.value}
+				onChange={initialPay.onChange}
 				min={minInitialPay}
 				max={maxInitialPay}
 				step={1000}
 				postfix={`${initialPayPercent}%`}
-				onChange={initialPay.onChange}
 				label='Первоначальный взнос'
 			/>
 			<Field
-				postfix='мес.'
+				className={styles.field}
 				value={duration.value}
 				onChange={duration.onChange}
 				min={1}
 				max={60}
+				postfix='мес.'
 				label='Срок лизинга'
 			/>
 			<p className={styles.result}>
@@ -95,7 +98,6 @@ export const CalculateForm: React.FC<CalculateFormProps> = React.memo(function C
 				<Label>Ежемесячный платеж от</Label>
 				<span className={styles.resultText}>{prepareMoneyView(monthPay)} ₽</span>
 			</p>
-
 			<Button className={styles.button} type='submit' isLoading={isLoading.value}>
 				Оставить заявку
 			</Button>

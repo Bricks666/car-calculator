@@ -25,3 +25,31 @@
 	font-size: 30px;
 	line-height: 1.2em;
 }
+
+@media (max-width: 1440px) {
+	.calculateForm {
+		grid-template-columns: repeat(2, 1fr);
+		row-gap: 32px;
+		column-gap: 50px;
+	}
+
+	.field {
+		grid-column: span 2;
+	}
+}
+
+@media (max-width: 768px) {
+	.calculateForm {
+		grid-template-columns: 1fr;
+		row-gap: 16px;
+	}
+
+	.field {
+		grid-column: span 1;
+	}
+
+	.resultText,
+	.button {
+		font-size: 22px;
+	}
+}
