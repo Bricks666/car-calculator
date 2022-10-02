@@ -1,10 +1,17 @@
-import { ChangeEvent, ChangeEventHandler, useCallback, useLayoutEffect, useState } from 'react';
+import {
+	ChangeEventHandler,
+	FocusEventHandler,
+	useCallback,
+	useLayoutEffect,
+	useRef,
+	useState,
+} from 'react';
 import { VoidFunction } from '@/interfaces/common';
 import useEvent from './useEvent';
 
 export type AllowedFieldTypes = number | string | boolean;
 
-export type Prepare<T extends AllowedFieldTypes> = (value: T) => T;
+export type Prepare<T extends AllowedFieldTypes> = (value: T | null, lastValidValue: T) => T | null;
 
 export interface UseFieldParams<T extends AllowedFieldTypes> {
 	readonly defaultValue: T;
@@ -14,6 +21,7 @@ export interface UseFieldParams<T extends AllowedFieldTypes> {
 export interface UseFieldResult<T extends AllowedFieldTypes> {
 	readonly value: T;
 	readonly onChange: ChangeEventHandler<HTMLInputElement>;
+	readonly onBlur: FocusEventHandler<HTMLInputElement>;
 	readonly reset: VoidFunction;
 	readonly isDirty: boolean;
 }
@@ -21,33 +29,39 @@ export interface UseFieldResult<T extends AllowedFieldTypes> {
 const useField = <T extends AllowedFieldTypes>(params: UseFieldParams<T>): UseFieldResult<T> => {
 	const { defaultValue, prepareValue } = params;
 	const [value, setValue] = useState<T>(defaultValue);
+	const lastValidValueRef = useRef(value);
 
 	const onChange = useEvent<ChangeEventHandler<HTMLInputElement>>((evt) => {
-		let preparedValue: T = evt.target.value as T;
+		setValue(evt.target.value as T);
+	});
+
+	const validate = useEvent(() => {
+		const lastValidValue: T = lastValidValueRef.current;
+		let preparedValue: T | null = null;
 		if (prepareValue) {
 			if (Array.isArray(prepareValue)) {
-				preparedValue = prepareValue.reduceRight((acc, preparer) => preparer(acc), preparedValue);
+				preparedValue = prepareValue.reduceRight<T | null>(
+					(acc, preparer) => preparer(acc, lastValidValue),
+					value
+				);
 			} else {
-				preparedValue = prepareValue(preparedValue);
+				preparedValue = prepareValue(value, lastValidValue);
 			}
 		}
-
-		if (
-			Number.isNaN(preparedValue) ||
-			typeof preparedValue === 'undefined' ||
-			preparedValue === null
-		) {
+		if (Number.isNaN(preparedValue) || preparedValue === null) {
 			return;
 		}
+
+		lastValidValueRef.current = preparedValue;
 		setValue(preparedValue);
 	});
 
+	const onBlur = useEvent<FocusEventHandler<HTMLInputElement>>(() => {
+		validate();
+	});
+
 	useLayoutEffect(() => {
-		onChange({
-			target: {
-				value,
-			},
-		} as unknown as ChangeEvent<HTMLInputElement>);
+		validate();
 	}, [prepareValue]);
 
 	const reset = useCallback(() => {
@@ -57,6 +71,7 @@ const useField = <T extends AllowedFieldTypes>(params: UseFieldParams<T>): UseFi
 	return {
 		value,
 		onChange,
+		onBlur,
 		reset,
 		isDirty: value !== defaultValue,
 	};

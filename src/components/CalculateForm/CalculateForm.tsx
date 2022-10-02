@@ -1,7 +1,6 @@
 import * as React from 'react';
 import cn from 'classnames';
 import { CommonProps } from '@/interfaces/common';
-import { addRequest, AddRequestParams } from '@/api/requests';
 import { Field } from '../Field';
 import { Label } from '../Label';
 import { Button } from '../Button';
@@ -11,6 +10,7 @@ import prepareMoneyView from './utils/prepareMoneyView';
 import useToggle from '@/hooks/useToggle';
 import { durationPreparers, pricePreparers } from './validating';
 import prepareFieldConstrains from './utils/prepareFieldConstrains';
+import { createCalculateRequest, CreateCalculateRequestParams } from '@/api/calculate';
 
 import styles from './CalculateForm.module.css';
 
@@ -35,12 +35,12 @@ export const CalculateForm: React.FC<CalculateFormProps> = React.memo(function C
 		evt.preventDefault();
 		isLoading.toggleOn();
 		try {
-			const data: AddRequestParams = {
+			const data: CreateCalculateRequestParams = {
 				duration: duration.value,
 				initialPayPercent: (initialPay.value / price.value) * 100,
 				price: price.value,
 			};
-			await addRequest(data);
+			await createCalculateRequest(data);
 		} catch (error) {
 			alert('Произошла ошибка');
 		} finally {
@@ -57,7 +57,7 @@ export const CalculateForm: React.FC<CalculateFormProps> = React.memo(function C
 			((0.035 * (1 + 0.035) ** duration.value) / ((1 + 0.035) ** duration.value - 1))
 	);
 
-	const dealAmount = initialPay.value + duration.value * monthPay;
+	const dealAmount = +initialPay.value + +duration.value * monthPay;
 
 	return (
 		<form className={cn(styles.calculateForm, className)} onSubmit={onSubmit}>
@@ -65,6 +65,7 @@ export const CalculateForm: React.FC<CalculateFormProps> = React.memo(function C
 				className={styles.field}
 				value={price.value}
 				onChange={price.onChange}
+				onBlur={price.onBlur}
 				min={1_000_000}
 				max={6_000_000}
 				step={10_000}
@@ -75,6 +76,7 @@ export const CalculateForm: React.FC<CalculateFormProps> = React.memo(function C
 				className={styles.field}
 				value={initialPay.value}
 				onChange={initialPay.onChange}
+				onBlur={initialPay.onBlur}
 				min={minInitialPay}
 				max={maxInitialPay}
 				step={1000}
@@ -85,6 +87,7 @@ export const CalculateForm: React.FC<CalculateFormProps> = React.memo(function C
 				className={styles.field}
 				value={duration.value}
 				onChange={duration.onChange}
+				onBlur={duration.onBlur}
 				min={1}
 				max={60}
 				postfix='мес.'

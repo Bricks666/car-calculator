@@ -32,6 +32,10 @@
 	background-color: var(--global-grey);
 }
 
+.buttonIsLoading {
+	pointer-events: none;
+}
+
 .loading {
 	width: 1em;
 	height: 1em;

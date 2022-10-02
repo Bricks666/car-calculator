@@ -12,7 +12,9 @@ export interface ButtonProps extends CommonProps, React.ButtonHTMLAttributes<HTM
 export const Button: React.FC<React.PropsWithChildren<ButtonProps>> = (props) => {
 	const { className, children, isLoading, ...rest } = props;
 	return (
-		<button className={cn(styles.button, className)} {...rest}>
+		<button
+			className={cn(styles.button, { [styles.buttonIsLoading]: isLoading }, className)}
+			{...rest}>
 			{isLoading ? <Loading className={styles.loading} /> : children}
 		</button>
 	);
