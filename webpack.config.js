@@ -15,7 +15,7 @@ const getConfig = () => {
 		output: {
 			path: paths.build,
 			filename: 'static/js/[name].[contenthash:8].js',
-			publicPath: '.',
+			publicPath: './',
 			pathinfo: true,
 			chunkFilename: 'static/js/[name].[contenthash:8].chunk.js',
 			assetModuleFilename: 'static/media/[name].[hash][ext]',
