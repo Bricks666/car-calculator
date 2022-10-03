@@ -72,7 +72,7 @@ const getConfig = () => {
 		plugins: [
 			new HtmlWebpackPlugin({
 				template: path.join(paths.public, 'index.html'),
-				minify: false,
+				minify: true,
 			}),
 			new MiniCssExtractPlugin(),
 		],
