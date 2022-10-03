@@ -2,7 +2,7 @@ const { HotModuleReplacementPlugin } = require('webpack');
 const { default: webpackMerge } = require('webpack-merge');
 const baseConfig = require('./webpack.config');
 
-const getConfig = () => {
+const getConfig = (...args) => {
 	/**
 	 * @type {import('webpack').Configuration}
 	 */
@@ -22,7 +22,7 @@ const getConfig = () => {
 		plugins: [new HotModuleReplacementPlugin()],
 	};
 
-	return webpackMerge(baseConfig, config);
+	return webpackMerge(baseConfig(...args), config);
 };
 
 module.exports = getConfig;

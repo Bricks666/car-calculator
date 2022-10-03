@@ -1,0 +1,42 @@
+.button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	height: max-content;
+	min-width: 100px;
+
+	padding: 12px 24px;
+
+	background-color: var(--global-orange);
+
+	font-family: 'Gilroy', sans-serif;
+	font-size: 16px;
+	line-height: 1.5em;
+	color: var(--global-white);
+	font-weight: 700;
+
+	border-radius: 40px;
+
+	transition: background-color ease-in-out 200ms;
+
+	cursor: pointer;
+}
+
+.button:hover,
+.button:focus-visible {
+	background-color: var(--global-black);
+}
+
+.button:active {
+	background-color: var(--global-grey);
+}
+
+.buttonIsLoading {
+	pointer-events: none;
+}
+
+.loading {
+	width: 1em;
+	height: 1em;
+}

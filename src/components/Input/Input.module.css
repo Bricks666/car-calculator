@@ -1,0 +1,61 @@
+.container {
+	--input-background-color: var(--global-grey-light);
+	--input-border-color: transparent;
+
+	position: relative;
+
+	line-height: 1.2em;
+	font-weight: 900;
+	font-size: 30px;
+	font-family: 'Nekst', sans-serif;
+}
+
+.input {
+	width: 100%;
+	height: max-content;
+
+	padding: 16px 24px;
+
+	background-color: var(--input-background-color);
+
+	border-radius: 16px;
+	border: 2px solid var(--input-border-color);
+
+	font-size: inherit;
+	font-weight: inherit;
+	line-height: inherit;
+	font-family: inherit;
+	color: inherit;
+
+	transition: all 200ms ease-in-out;
+}
+
+.input::placeholder {
+	font-size: inherit;
+	font-weight: inherit;
+	line-height: inherit;
+	color: inherit;
+	font-family: inherit;
+}
+
+.inputHasPostfix {
+	padding-right: calc(70px + 24px + 0.5em);
+}
+
+.postfix {
+	position: absolute;
+	right: 24px;
+	top: 50%;
+
+	max-width: 70px;
+
+	overflow: hidden;
+
+	transform: translateY(-50%);
+}
+
+@media (max-width: 768px) {
+	.container {
+		font-size: 22px;
+	}
+}

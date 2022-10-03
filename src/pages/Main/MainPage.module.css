@@ -1,0 +1,22 @@
+.main {
+	display: flex;
+	flex-direction: column;
+	row-gap: 30px;
+	justify-content: center;
+}
+
+.header {
+	font-family: 'Nekst', sans-serif;
+	line-height: 1.1em;
+	font-size: 54px;
+	font-weight: 700;
+	color: var(--global-black);
+
+	max-width: 800px;
+}
+
+@media (max-width: 768px) {
+	.header {
+		font-size: 34px;
+	}
+}
