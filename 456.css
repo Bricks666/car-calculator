@@ -1,3 +1,6 @@
+/*!*****************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./src/components/Container/Container.module.css ***!
+  \*****************************************************************************************************************************/
 .Container-module__YttEe7kIjjIAtcbhghld {
 	--container-breakpoint-width: 1440px;
 	--container-side-margin: 48px;
@@ -26,10 +29,16 @@
 	}
 }
 
+/*!****************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./src/layouts/MainLayout/MainLayout.module.css ***!
+  \****************************************************************************************************************************/
 .MainLayout-module__T5qhEJ4qBRgbwjpazzZw {
 	min-height: 100vh;
 }
 
+/*!*********************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./src/components/Input/Input.module.css ***!
+  \*********************************************************************************************************************/
 .Input-module__KS0H6vUtx9WKhkWZSStG {
 	--input-background-color: var(--global-grey-light);
 	--input-border-color: transparent;
@@ -92,6 +101,9 @@
 	}
 }
 
+/*!*********************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./src/components/Range/Range.module.css ***!
+  \*********************************************************************************************************************/
 .Range-module__QBHEcjoaHWx58qKmRKHz {
 	--range-track-height: 2px;
 
@@ -163,6 +175,9 @@
 	background-color: var(--global-orange);
 }
 
+/*!***************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./src/components/InputWithRange/InputWithRange.module.css ***!
+  \***************************************************************************************************************************************/
 .InputWithRange-module__oJBJ81MrOfqXXLPLP4rG {
 	position: relative;
 }
@@ -189,6 +204,9 @@
 	--range-track-height: 1px;
 }
 
+/*!*********************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./src/components/Label/Label.module.css ***!
+  \*********************************************************************************************************************/
 .Label-module__cjQoqVs3VqSYANFvJFBU {
 	font-size: 16px;
 	line-height: 1.2em;
@@ -200,6 +218,9 @@
 	}
 }
 
+/*!*********************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./src/components/Field/Field.module.css ***!
+  \*********************************************************************************************************************/
 .Field-module__hJUL719E0JEkOVulee_J {
 	display: grid;
 	row-gap: 24px;
@@ -211,6 +232,9 @@
 	}
 }
 
+/*!*************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./src/components/Loading/Loading.module.css ***!
+  \*************************************************************************************************************************/
 .Loading-module__LhQXvTy4mUwjaZ7L4NCG {
 	display: inline-block;
 
@@ -238,6 +262,9 @@
 	}
 }
 
+/*!***********************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./src/components/Button/Button.module.css ***!
+  \***********************************************************************************************************************/
 .Button-module__AisLsJaE_AWnIhDlnTUV {
 	display: flex;
 	align-items: center;
@@ -281,6 +308,9 @@
 	height: 1em;
 }
 
+/*!*************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./src/components/CalculateForm/CalculateForm.module.css ***!
+  \*************************************************************************************************************************************/
 .CalculateForm-module__lbzvkpKDboBwR3HN4eAA {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
@@ -337,6 +367,9 @@
 	}
 }
 
+/*!******************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./src/pages/Main/MainPage.module.css ***!
+  \******************************************************************************************************************/
 .MainPage-module__OuV3BCLzNXOKo3YvO4qZ {
 	display: flex;
 	flex-direction: column;
