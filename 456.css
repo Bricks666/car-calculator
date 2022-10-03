@@ -272,12 +272,6 @@
 	background-color: var(--global-grey);
 }
 
-.Button-module__AisLsJaE_AWnIhDlnTUV:disabled {
-  background-color: var(--global-orange-light);
-
-  cursor: default;
-}
-
 .Button-module__sMylVy2tdvYEuOyCHbHW {
 	pointer-events: none;
 }
