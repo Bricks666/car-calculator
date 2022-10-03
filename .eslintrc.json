@@ -55,7 +55,7 @@
 		"react/jsx-indent": ["error", "tab"],
 		"react/jsx-indent-props": ["error", "tab"],
 		"react/function-component-definition": "off",
-    "react/button-has-type": "off",
+		"react/button-has-type": "off",
 
 		/* IMPORT */
 		"import/extensions": [
@@ -78,5 +78,5 @@
 		"@typescript-eslint/no-unused-vars": ["error"],
 		"@typescript-eslint/no-empty-interface": ["off"]
 	},
-	"ignorePatterns": ["templates/**/*", "*.css.d.ts"]
+	"ignorePatterns": ["templates/**/*", "*.css.d.ts", "*.js"]
 }

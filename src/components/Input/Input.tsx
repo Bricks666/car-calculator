@@ -3,10 +3,12 @@ import cn from 'classnames';
 import { CommonProps } from '@/interfaces/common';
 
 import styles from './Input.module.css';
+import { InputMode } from './types';
 
 export interface InputProps extends CommonProps, React.InputHTMLAttributes<HTMLInputElement> {
 	readonly type?: Exclude<React.InputHTMLAttributes<HTMLInputElement>['type'], 'range'>;
 	readonly postfix?: string;
+	readonly inputmode?: InputMode;
 }
 
 export const Input: React.FC<InputProps> = React.memo(function Input(props) {

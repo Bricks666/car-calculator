@@ -69,6 +69,7 @@ export const CalculateForm: React.FC<CalculateFormProps> = React.memo(function C
 				min={1_000_000}
 				max={6_000_000}
 				step={10_000}
+				inputMode='numeric'
 				postfix='₽'
 				label='Стоимость автомобиля'
 			/>
@@ -80,6 +81,7 @@ export const CalculateForm: React.FC<CalculateFormProps> = React.memo(function C
 				min={minInitialPay}
 				max={maxInitialPay}
 				step={1000}
+				inputMode='numeric'
 				postfix={`${initialPayPercent}%`}
 				label='Первоначальный взнос'
 			/>
@@ -90,6 +92,7 @@ export const CalculateForm: React.FC<CalculateFormProps> = React.memo(function C
 				onBlur={duration.onBlur}
 				min={1}
 				max={60}
+				inputMode='numeric'
 				postfix='мес.'
 				label='Срок лизинга'
 			/>
