@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcalculator=self.webpackChunkcalculator||[]).push([[248],{248:(c,a,e)=>{e.r(a),e.d(a,{default:()=>l});var t=e(893),u=e(250);const l=function(){return(0,t.jsx)(u.Fg,{to:"/",replace:!0})}}}]);

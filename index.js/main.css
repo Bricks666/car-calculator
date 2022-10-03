@@ -1,0 +1,53 @@
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+input,
+button {
+	outline: none;
+	border: none;
+}
+
+:root {
+	--global-orange: #ff9514;
+	--global-orange-light: rgba(255, 149, 20, 0.4);
+	--global-black: #111111;
+	--global-grey: #575757;
+	--global-grey-light: #f3f3f4;
+	--global-white: #ffffff;
+}
+
+@font-face {
+	font-family: 'Nekst';
+	font-weight: 900;
+	font-style: normal;
+	src: local('Nekst'), local('Nekst-Black'), url(/f0e2921efcf1112b1749.woff) format('woff');
+}
+
+@font-face {
+	font-family: 'Gilroy';
+	font-weight: 700;
+	font-style: normal;
+	src: local('Gilroy'), local('Gilroy-Bold'), url(/0607a1bc636f63251ed8.woff) format('woff');
+}
+
+@font-face {
+	font-family: 'Gilroy';
+	font-weight: 400;
+	font-style: normal;
+	src: local('Gilroy'), local('Gilroy-Regular'),
+		url(/ebe86c0337572553acea.woff) format('woff');
+}
+
+body {
+	color: var(--global-grey);
+	font-family: 'Gilory', sans-serif;
+}
+
