@@ -27,14 +27,14 @@ button {
 	font-family: 'Nekst';
 	font-weight: 900;
 	font-style: normal;
-	src: local('Nekst'), local('Nekst-Black'), url(f0e2921efcf1112b1749.woff) format('woff');
+	src: local('Nekst'), local('Nekst-Black'), url(./f0e2921efcf1112b1749.woff) format('woff');
 }
 
 @font-face {
 	font-family: 'Gilroy';
 	font-weight: 700;
 	font-style: normal;
-	src: local('Gilroy'), local('Gilroy-Bold'), url(0607a1bc636f63251ed8.woff) format('woff');
+	src: local('Gilroy'), local('Gilroy-Bold'), url(./0607a1bc636f63251ed8.woff) format('woff');
 }
 
 @font-face {
@@ -42,7 +42,7 @@ button {
 	font-weight: 400;
 	font-style: normal;
 	src: local('Gilroy'), local('Gilroy-Regular'),
-		url(ebe86c0337572553acea.woff) format('woff');
+		url(./ebe86c0337572553acea.woff) format('woff');
 }
 
 body {
